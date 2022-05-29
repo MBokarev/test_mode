@@ -13,8 +13,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 class AuthTest {
-    DataGenerator.UserInfo gen1 = DataGenerator.getUserInfoActive();
-    DataGenerator.UserInfo gen2 = DataGenerator.getUserInfoBlocked();
+    DataGenerator.UserInfo gen1 = DataGenerator.getUserInfo("active");
+    DataGenerator.UserInfo gen2 = DataGenerator.getUserInfo("blocked");
 
     @BeforeEach
     public void openPage() {

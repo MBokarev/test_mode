@@ -1,8 +1,6 @@
 package ru.netology.web.data;
 
 import com.github.javafaker.Faker;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Value;
 
 import java.util.Locale;
@@ -13,8 +11,6 @@ public class DataGenerator {
     }
 
     @Value
-    @Data
-    @AllArgsConstructor
     public static class UserInfo {
         private String login;
         private String password;
@@ -23,16 +19,10 @@ public class DataGenerator {
 
     private static Faker faker = new Faker(new Locale("en"));
 
-    public static UserInfo getUserInfoActive() {
+    public static UserInfo getUserInfo(String status) {
         return new UserInfo(faker.name().username(),
                 faker.internet().password(),
-                "active");
-    }
-
-    public static UserInfo getUserInfoBlocked() {
-        return new UserInfo(faker.name().username(),
-                faker.internet().password(),
-                "blocked");
+                status);
     }
 
     public static String getInvalidLogin() {
